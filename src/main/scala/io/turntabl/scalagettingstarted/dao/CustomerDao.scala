@@ -26,7 +26,7 @@ object CustomerMapper extends RowMapper[CustomerTO] {
     val phone = rs.getString("phone")
     val address = rs.getString("address")
     val email = rs.getString("email")
-    CustomerTO(Some(id),name,phone,address, email)
+    CustomerTO(id,name,phone,address, email)
 
   }
 }

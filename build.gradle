@@ -17,6 +17,7 @@ repositories {
 
 dependencies {
     implementation 'org.scala-lang:scala-library:2.11.12'
+    implementation 'org.json4s:json4s-native_2.10:3.2.4'
     testImplementation 'org.scalatest:scalatest_2.11:3.0.0'
 //    testImplementation 'junit:junit:4.12'
 

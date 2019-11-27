@@ -17,6 +17,9 @@ class CustomerDao @Autowired()(val dataSource: DataSource) {
   def getAll = jdbcTemplate.query("select * from customers",
     CustomerMapper)
 
+  def getById(id: Int): CustomerTO = jdbcTemplate.queryForObject("select * from customers where id = ?", CustomerMapper, java.lang.Integer.valueOf(id))
+
+  def getByName(name:String): CustomerTO = jdbcTemplate.queryForObject("select * from customers where name like ?", CustomerMapper, java.lang.String.valueOf(name))
 }
 @Bean
 object CustomerMapper extends RowMapper[CustomerTO] {

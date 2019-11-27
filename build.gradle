@@ -1,6 +1,8 @@
 plugins {
     id 'scala'
     id 'application'
+    id 'org.springframework.boot' version '2.2.1.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 }
 
 group 'io.turntabl'
@@ -16,5 +18,16 @@ repositories {
 dependencies {
     implementation 'org.scala-lang:scala-library:2.11.12'
     testImplementation 'org.scalatest:scalatest_2.11:3.0.0'
-    testImplementation 'junit:junit:4.12'
+//    testImplementation 'junit:junit:4.12'
+
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
 }

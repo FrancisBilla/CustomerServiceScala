@@ -1,5 +1,9 @@
 package io.turntabl.scalagettingstarted
 
-object MyApp extends App {
-    print("Hello, World!")
+import org.springframework.boot.SpringApplication
+
+
+object CustomerServiceScalaApplication extends App{
+
+    SpringApplication.run(classOf[Config])
 }
